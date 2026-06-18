@@ -61,8 +61,16 @@ const AuthorScraperPanel: React.FC = () => {
         setError('');
         setIsScraping(true);
 
+        // 爬虫后端地址：本地用 localhost:3001，线上未部署时该变量为空
+        const SCRAPER_BASE = import.meta.env.VITE_SCRAPER_BASE || '';
+        if (!SCRAPER_BASE) {
+            setError('作者抓取功能需要本地运行爬虫服务（server/），当前线上环境未部署该服务。');
+            setIsScraping(false);
+            return;
+        }
+
         try {
-            const response = await fetch('http://localhost:3001/api/scrape/author', {
+            const response = await fetch(`${SCRAPER_BASE}/api/scrape/author`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url, topCount })
