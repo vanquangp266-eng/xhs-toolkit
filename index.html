@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小红书 AI 工具箱</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rednote': {
+                50: '#fff1f2',
+                100: '#ffe4e6',
+                200: '#fecdd3',
+                300: '#fda4af',
+                400: '#fb7185',
+                500: '#FF2442',
+                600: '#e11d48',
+                700: '#be123c',
+                800: '#9f1239',
+                900: '#881337',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+      
+      body {
+        font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        background-color: #f8fafc; /* slate-50 base */
+        color: #0f172a; /* slate-900 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Premium custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
